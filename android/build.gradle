@@ -1,0 +1,49 @@
+allprojects {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+
+    subprojects {
+        project.buildDir = "${rootProject.buildDir}/${project.name}"
+        afterEvaluate {
+            if (it.hasProperty('android')) {
+                if (it.android.namespace == null) {
+                    def manifest = new XmlSlurper().parse(file(it.android.sourceSets.main.manifest.srcFile))
+                    def packageName = manifest.@package.text()
+                    android.namespace = packageName
+                }
+
+                def javaVersion = JavaVersion.VERSION_17
+                android {
+                    compileOptions {
+                        sourceCompatibility javaVersion
+                        targetCompatibility javaVersion
+                    }
+                    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+                        kotlinOptions {
+                            jvmTarget = javaVersion.toString()
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    subprojects {
+        project.evaluationDependsOn(':app')
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
