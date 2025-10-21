@@ -10,8 +10,8 @@ class PhotoCutView extends GetView<PhotoCutLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.jast.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.stracke.value
+              ? const CircularProgressIndicator(color: Colors.yellow)
               : buildError(),
         ),
       ),
@@ -25,7 +25,7 @@ class PhotoCutView extends GetView<PhotoCutLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.ekcowyn();
+              controller.hyvqr();
             },
             icon: const Icon(
               Icons.restart_alt,

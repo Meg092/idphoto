@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:id_photo/db_photo/db_photo.dart';
 import 'package:id_photo/pages/all_size_select/all_size_select_binding.dart';
+import 'package:id_photo/pages/all_size_select/all_size_select_more.dart';
 import 'package:id_photo/pages/all_size_select/all_size_select_view.dart';
+import 'package:id_photo/pages/photo_cut/photo_cut_binding.dart';
+import 'package:id_photo/pages/photo_cut/photo_cut_view.dart';
 import 'package:id_photo/pages/photo_details/photo_details_binding.dart';
 import 'package:id_photo/pages/photo_details/photo_details_view.dart';
 import 'package:id_photo/pages/photo_first/photo_first_binding.dart';
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: IDCollection,
-      initialRoute:'/photoTab',
+      initialRoute:'/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -83,10 +86,12 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> IDCollection = [
+  GetPage(name: '/', page: () => PhotoCutView(), binding: PhotoCutBinding()),
   GetPage(name: '/photoTab', page: () => PhotoTabPage(), binding: PhotoTabBinding()),
   GetPage(name: '/photoFirst', page: () => PhotoFirstPage(), binding: PhotoFirstBinding()),
   GetPage(name: '/photoSecond', page: () => PhotoSecondPage(), binding: PhotoSecondBinding()),
   GetPage(name: '/photoThird', page: () => PhotoThirdPage(), binding: PhotoThirdBinding()),
   GetPage(name: '/photoDetail', page: () => PhotoDetailsPage(), binding: PhotoDetailsBinding()),
   GetPage(name: '/allSizeSelect', page: () => AllSizeSelectPage(), binding: AllSizeSelectBinding()),
+  GetPage(name: '/selectMore', page: () => AllSizeSelectMore()),
 ];

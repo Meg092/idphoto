@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../photo_cut/photo_cut_logic.dart';
 
-class TimeOutReload extends GetView<PhotoCutLogic> {
+class AllSizeSelectMore extends GetView<PhotoCutLogic> {
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class TimeOutReload extends GetView<PhotoCutLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.nxlfo.value)),
+              url: WebUri.uri(Uri.parse(controller.wisklzpa.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,
